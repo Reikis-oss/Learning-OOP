@@ -9,15 +9,13 @@ public class Homework1 {
         public static void main() {
                 VendingMachine vendingMachine = new VendingMachine();
 
-                List<Product> products = new ArrayList<>(Arrays.asList(new Product("pepsi", 42),
-                                new Product("chocolate", 67), new Product("cola", 70)));
-                vendingMachine.intProduct(products);
+                List<HotDrink> hotDrink = new ArrayList<>(Arrays.asList(new HotDrink("milk", 42, 60),
+                                new HotDrink("hot chocolate", 67, 70), new HotDrink("coffee", 70, 98)));
+                vendingMachine.intHotDrink(hotDrink);
 
-                products.add(new Product("chocolate", 507));
+                List<HotDrink> listHotDrink = vendingMachine.getHotDrink("hot chocolate");
 
-                List<Product> listProduct = vendingMachine.getProduct("chocolate");
-
-                for (Product p : listProduct) {
+                for (HotDrink p : listHotDrink) {
                         System.out.println(p.toString());
                 }
         }
